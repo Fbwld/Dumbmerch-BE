@@ -19,12 +19,13 @@ const io = new Server(server, {
 
 require('./src/socket')(io)
 
+require("dotenv").config()
+
 const port = process.env.PORT || 5000
 
 
 app.use('/uploads', express.static('uploads'))
 
-require("dotenv").config()
 
 app.use(express.json())
 
@@ -33,4 +34,12 @@ app.use(cors())
 // Add endpoint grouping and router
 app.use('/api/v1/', router)
 
+app.get('/', function (req, res){
+    res.send({
+        message: 'Hello World'
+    });
+});
+
 server.listen(port, () => console.log(`Listening on port ${port}!`))
+
+
