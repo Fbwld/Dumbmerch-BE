@@ -148,7 +148,7 @@ exports.getProduct = async(req,res)=>{
                 exclude:['idUser','createdAt','updatedAt']
             }
         })
-        let FILE_PATH = 'https://res.cloudinary.com/dqupqbxww/image/upload/v1655101469/dumbmerch-34/'
+        // let FILE_PATH = 'https://res.cloudinary.com/dqupqbxww/image/upload/v1655101469/dumbmerch-34/'
         // data = JSON.parse(JSON.stringify(data))
     
         // data = data.map((item) => {
