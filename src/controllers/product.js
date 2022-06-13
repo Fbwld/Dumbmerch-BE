@@ -1,13 +1,21 @@
 const {product, user, category, productcaegory}= require(`../../models`)
+const cloudinary = require('../utils/cloudinary');
 
 
 exports.addProduct= async(req,res)=>{
     try {
+
+        const result = await cloudinary.uploader.upload(req.file.path, {
+        folder: 'dumbmerch_34',
+        use_filename: true,
+        unique_filename: false,
+        });
+
         const data = {
             name: req.body.name,
             desc: req.body.desc,
             price: req.body.price,
-            iamge: req.file.filename,
+            iamge: result.public_id,
             qty: req.body.qty,
             idUser: req.user.id,
             };
