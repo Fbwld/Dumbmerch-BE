@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require('express')
 
 const cors = require('cors')
@@ -19,7 +20,6 @@ const io = new Server(server, {
 
 require('./src/socket')(io)
 
-require("dotenv").config()
 
 const port = process.env.PORT || 5000
 

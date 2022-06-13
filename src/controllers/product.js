@@ -88,14 +88,14 @@ exports.getProducts = async(req,res)=>{
         }
     })
     // let FILE_PATH = 'http://localhost:5000/uploads/'
-    // data = JSON.parse(JSON.stringify(data))
+    data = JSON.parse(JSON.stringify(data))
 
-    // data = data.map((item) => {
-    //     return {
-    //     ...item,
-    //     image: FILE_PATH + item.image
-    //     }
-    // })
+    data = data.map((item) => {
+        return {
+        ...item,
+        iamge: process.env.FILE_PATH + item.iamge
+        }
+    })
     res.send({
         status:"success",
         data:{
