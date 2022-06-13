@@ -6,7 +6,7 @@ exports.addProduct= async(req,res)=>{
     try {
 
         const result = await cloudinary.uploader.upload(req.file.path, {
-        folder: 'dumbmerch_34',
+        folder: 'dumbmerch-34',
         use_filename: true,
         unique_filename: false,
         });
